@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components | PocketPandit</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/kundali/kundali.ts"></script>
+
+    <style>
+      poc-kundali {
+        /*--poc-kundali-outline-color: blue;*/
+      }
+      .buttons-container {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .expand {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="buttons-container">
+        <button id="north-btn">North Chart</button>
+        <button id="south-btn">South Chart</button>
+        <button id="east-btn">East Chart</button>
+      </div>
+      <br />
+      <div class="expand">
+        <button id="btn" type="button">Expand</button>
+      </div>
+      <hr />
+    </section>
+    <section style="display: flex; flex-grow: 1">
+      <poc-kundali
+        id="birth-chart"
+        size="480"
+        watermark="PocketPandit"
+      ></poc-kundali>
+
+      <!--
+    <poc-kundali size="400" watermark="PocketPandit"
+      chart-data='[{"name":1,"zodiac":{"name":"Leo","displayName":"Leo"},"planets":[{"name":"Ascendant","displayName":"As 20°"}]},{"name":2,"zodiac":{"name":"Virgo","displayName":"Virgo"},"planets":[]},{"name":3,"zodiac":{"name":"Libra","displayName":"Libra"},"planets":[]},{"name":4,"zodiac":{"name":"Scorpio","displayName":"Scorpio"},"planets":[]},{"name":5,"zodiac":{"name":"Sagittarius","displayName":"Sagittarius"},"planets":[]},{"name":6,"zodiac":{"name":"Capricorn","displayName":"Capricorn"},"planets":[{"name":"Venus","displayName":"Ve 24°"},{"name":"Mars","displayName":"↑Ma 16°"},{"name":"Saturn","displayName":"﹡Sa 0°"},{"name":"Rahu","displayName":"Raⓡ 20°"}]},{"name":7,"zodiac":{"name":"Aquarius","displayName":"Aquarius"},"planets":[{"name":"Moon","displayName":"Mo 22°"}]},{"name":8,"zodiac":{"name":"Pisces","displayName":"Pisces"},"planets":[{"name":"Sun","displayName":"Su 10°"},{"name":"Mercury","displayName":"↓Meⓒ 17°"}]},{"name":9,"zodiac":{"name":"Aries","displayName":"Aries"},"planets":[]},{"name":10,"zodiac":{"name":"Taurus","displayName":"Taurus"},"planets":[]},{"name":11,"zodiac":{"name":"Gemini","displayName":"Gemini"},"planets":[{"name":"Jupiter","displayName":"Ju 8°"}]},{"name":12,"zodiac":{"name":"Cancer","displayName":"Cancer"},"planets":[{"name":"Ketu","displayName":"Keⓡ 20°"}]}]'>
+    </poc-kundali>
+    --></section>
+  </body>
+
+  <script>
+    const $birthChart = document.querySelector("#birth-chart");
+    const $btn = document.querySelector("#btn");
+
+    // $birthChart.chartData = [
+    //   {
+    //     name: 1,
+    //     displayName: "1",
+    //     zodiac: {
+    //       name: "Aries",
+    //       displayName: "Aries",
+    //     },
+    //     planets: [{ name: "Ascendant", displayName: "Asc 13\u00B0" }],
+    //   },
+    //   {
+    //     name: 2,
+    //     displayName: "2",
+    //     zodiac: {
+    //       name: "Taurus",
+    //       displayName: "Taurus",
+    //     },
+    //     planets: [],
+    //   },
+    //   {
+    //     name: 3,
+    //     displayName: "3",
+    //     zodiac: {
+    //       name: "Gemini",
+    //       displayName: "Gemini",
+    //     },
+    //     planets: [],
+    //   },
+    //   {
+    //     name: 4,
+    //     displayName: "4",
+    //     zodiac: {
+    //       name: "Cancer",
+    //       displayName: "Cancer",
+    //     },
+    //     planets: [{ name: "Rahu", displayName: "\u24E1Ra 14\u00B0" }],
+    //   },
+    //   {
+    //     name: 5,
+    //     displayName: "5",
+    //     zodiac: {
+    //       name: "Leo",
+    //       displayName: "Leo",
+    //     },
+    //     planets: [{ name: "Saturn", displayName: "Sa\u24E1\uFE61 3\u00B0" }],
+    //   },
+    //   {
+    //     name: 6,
+    //     displayName: "6",
+    //     zodiac: {
+    //       name: "Virgo",
+    //       displayName: "Virgo",
+    //     },
+    //     planets: [],
+    //   },
+    //   {
+    //     name: 7,
+    //     displayName: "7",
+    //     zodiac: {
+    //       name: "Libra",
+    //       displayName: "Libra",
+    //     },
+    //     planets: [{ name: "Mars", displayName: "Ma 27\u00B0" }],
+    //   },
+    //   {
+    //     name: 8,
+    //     displayName: "8",
+    //     zodiac: {
+    //       name: "Scorpio",
+    //       displayName: "Scorpio",
+    //     },
+    //     planets: [{ name: "Moon", displayName: "Mo 13\u00B0" }],
+    //   },
+    //   {
+    //     name: 9,
+    //     displayName: "9",
+    //     zodiac: {
+    //       name: "Sagittarius",
+    //       displayName: "Sagittarius",
+    //     },
+    //     planets: [
+    //       { name: "Sun", displayName: "Su 11\u00B0" },
+    //       { name: "Venus", displayName: "\u24D2\uFE61Ve 13\u00B0" },
+    //       { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+    //     ],
+    //   },
+    //   {
+    //     name: 10,
+    //     displayName: "10",
+    //     zodiac: {
+    //       name: "Capricorn",
+    //       displayName: "Capricorn",
+    //     },
+    //     planets: [{ name: "Ketu", displayName: "Ke\u24E1 14\u00B0" }],
+    //   },
+    //   {
+    //     name: 11,
+    //     displayName: "11",
+    //     zodiac: {
+    //       name: "Aquarius",
+    //       displayName: "Aquarius",
+    //     },
+    //     planets: [],
+    //   },
+    //   {
+    //     name: 12,
+    //     displayName: "12",
+    //     zodiac: {
+    //       name: "Pisces",
+    //       displayName: "Pisces",
+    //     },
+    //     planets: [{ name: "Jupiter", displayName: "\u2193Ju 18\u00B0" }],
+    //   },
+    // ];
+
+    const $northBtn = document.querySelector("#north-btn");
+    const $southBtn = document.querySelector("#south-btn");
+    const $eastBtn = document.querySelector("#east-btn");
+
+    $northBtn.addEventListener("click", function () {
+      $birthChart.setAttribute("variant", "north");
+    });
+
+    $southBtn.addEventListener("click", function () {
+      $birthChart.setAttribute("variant", "south");
+    });
+
+    $eastBtn.addEventListener("click", function () {
+      $birthChart.setAttribute("variant", "east");
+    });
+
+
+    $btn.addEventListener("click", function (e) {
+      const currentSize = parseInt($birthChart.getAttribute("size")) || 480;
+      const newSize = currentSize === 480 ? 600 : 480; 
+      $birthChart.setAttribute("size", newSize);
+      $btn.textContent = newSize === 600 ? "Shrink" : "Expand"; 
+    });
+
+    $birthChart.addEventListener("click:chart-region", function (e) {
+      console.log("--clicked chart  region", e.detail);
+    });
+
+    //let dob = "1992-05-30T13:30:00+05:45";
+    //let dob = "1990-03-25T16:40:00+05:45";
+    let dob = new Date().toISOString().split(".").at(0);
+    //let dob = (new Date(1992, 12, 12, 13, 35)).toISOString().split(".").at(0);
+
+    fetch("http://localhost:6363/rpc", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "vedic_chart",
+        params: {
+          date_time: dob,
+          latitude: 27.70166667,
+          longitude: 85.32055556,
+          timezone: "Asia/Kathmandu",
+        },
+        id: 1,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        return (json.result?.houses || []).map((house, i) => {
+          return {
+            name: i + 1,
+            zodiac: {
+              name: house.zodiac.name,
+              displayName: house.zodiac.name,
+            },
+            planets: house.planets.map((planetInfo) => {
+              let displayFeatures = [];
+
+              const name = planetInfo.data.name;
+              const shortName = name.substr(0, 2);
+              const [deg] = planetInfo.basic_info.dms;
+              const isCombust = !!planetInfo.basic_info.is_combusted;
+              const isRetrograde = !!planetInfo.basic_info.is_retrograde;
+              const isDeilitate = !!planetInfo.basic_info.is_debilitated;
+              const isExalt = !!planetInfo.basic_info.is_exalted;
+              const isOwnHouse =
+                planetInfo.zodiac.lord.code === planetInfo.data.code;
+              const isRahuKetu = ["rahu", "ketu"].includes(
+                planetInfo.data.name.toLowerCase()
+              );
+
+              displayFeatures = [
+                `${isOwnHouse ? "\uFE61" : ""}`,
+                `${isDeilitate ? "\u2193" : ""}`,
+                `${isExalt ? "\u2191" : ""}`,
+                shortName,
+                `${isRetrograde && !isRahuKetu ? "\u24E1" : ""}`,
+                `${isCombust ? "\u24D2" : ""}`,
+                ` ${deg}\u00B0`,
+              ];
+
+              return {
+                name: name,
+                displayName: displayFeatures.join("").replace(/(\s+|\n)/, " "),
+              };
+            }),
+          };
+        });
+      })
+      .then((chartData) => {
+        //console.log(JSON.stringify(chartData, null, 0));
+        $birthChart.chartData = chartData;
+      });
+  </script>
+</html>
