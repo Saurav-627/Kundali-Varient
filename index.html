@@ -54,120 +54,173 @@
     const $birthChart = document.querySelector("#birth-chart");
     const $btn = document.querySelector("#btn");
 
-    // $birthChart.chartData = [
-    //   {
-    //     name: 1,
-    //     displayName: "1",
-    //     zodiac: {
-    //       name: "Aries",
-    //       displayName: "Aries",
-    //     },
-    //     planets: [{ name: "Ascendant", displayName: "Asc 13\u00B0" }],
-    //   },
-    //   {
-    //     name: 2,
-    //     displayName: "2",
-    //     zodiac: {
-    //       name: "Taurus",
-    //       displayName: "Taurus",
-    //     },
-    //     planets: [],
-    //   },
-    //   {
-    //     name: 3,
-    //     displayName: "3",
-    //     zodiac: {
-    //       name: "Gemini",
-    //       displayName: "Gemini",
-    //     },
-    //     planets: [],
-    //   },
-    //   {
-    //     name: 4,
-    //     displayName: "4",
-    //     zodiac: {
-    //       name: "Cancer",
-    //       displayName: "Cancer",
-    //     },
-    //     planets: [{ name: "Rahu", displayName: "\u24E1Ra 14\u00B0" }],
-    //   },
-    //   {
-    //     name: 5,
-    //     displayName: "5",
-    //     zodiac: {
-    //       name: "Leo",
-    //       displayName: "Leo",
-    //     },
-    //     planets: [{ name: "Saturn", displayName: "Sa\u24E1\uFE61 3\u00B0" }],
-    //   },
-    //   {
-    //     name: 6,
-    //     displayName: "6",
-    //     zodiac: {
-    //       name: "Virgo",
-    //       displayName: "Virgo",
-    //     },
-    //     planets: [],
-    //   },
-    //   {
-    //     name: 7,
-    //     displayName: "7",
-    //     zodiac: {
-    //       name: "Libra",
-    //       displayName: "Libra",
-    //     },
-    //     planets: [{ name: "Mars", displayName: "Ma 27\u00B0" }],
-    //   },
-    //   {
-    //     name: 8,
-    //     displayName: "8",
-    //     zodiac: {
-    //       name: "Scorpio",
-    //       displayName: "Scorpio",
-    //     },
-    //     planets: [{ name: "Moon", displayName: "Mo 13\u00B0" }],
-    //   },
-    //   {
-    //     name: 9,
-    //     displayName: "9",
-    //     zodiac: {
-    //       name: "Sagittarius",
-    //       displayName: "Sagittarius",
-    //     },
-    //     planets: [
-    //       { name: "Sun", displayName: "Su 11\u00B0" },
-    //       { name: "Venus", displayName: "\u24D2\uFE61Ve 13\u00B0" },
-    //       { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
-    //     ],
-    //   },
-    //   {
-    //     name: 10,
-    //     displayName: "10",
-    //     zodiac: {
-    //       name: "Capricorn",
-    //       displayName: "Capricorn",
-    //     },
-    //     planets: [{ name: "Ketu", displayName: "Ke\u24E1 14\u00B0" }],
-    //   },
-    //   {
-    //     name: 11,
-    //     displayName: "11",
-    //     zodiac: {
-    //       name: "Aquarius",
-    //       displayName: "Aquarius",
-    //     },
-    //     planets: [],
-    //   },
-    //   {
-    //     name: 12,
-    //     displayName: "12",
-    //     zodiac: {
-    //       name: "Pisces",
-    //       displayName: "Pisces",
-    //     },
-    //     planets: [{ name: "Jupiter", displayName: "\u2193Ju 18\u00B0" }],
-    //   },
-    // ];
+    $birthChart.chartData = [
+      {
+        name: 1,
+        displayName: "1",
+        zodiac: {
+          name: "Aries",
+          displayName: "Aries",
+        },
+        planets: [{ name: "Ascendant", displayName: "Asc 13\u00B0" }],
+      },
+      {
+        name: 2,
+        displayName: "2",
+        zodiac: {
+          name: "Taurus",
+          displayName: "Taurus",
+        },
+        planets: [
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 3,
+        displayName: "3",
+        zodiac: {
+          name: "Gemini",
+          displayName: "Gemini",
+        },
+        planets: [
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 4,
+        displayName: "4",
+        zodiac: {
+          name: "Cancer",
+          displayName: "Cancer",
+        },
+        planets: [{ name: "Rahu", displayName: "\u24E1Ra 14\u00B0" }],
+      },
+      {
+        name: 5,
+        displayName: "5",
+        zodiac: {
+          name: "Leo",
+          displayName: "Leo",
+        },
+        planets: [
+          { name: "Saturn", displayName: "Sa\u24E1\uFE61 3\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 6,
+        displayName: "6",
+        zodiac: {
+          name: "Virgo",
+          displayName: "Virgo",
+        },
+        planets: [
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 7,
+        displayName: "7",
+        zodiac: {
+          name: "Libra",
+          displayName: "Libra",
+        },
+        planets: [
+          { name: "Mars", displayName: "Ma 27\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 8,
+        displayName: "8",
+        zodiac: {
+          name: "Scorpio",
+          displayName: "Scorpio",
+        },
+        planets: [
+          { name: "Moon", displayName: "Mo 13\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 9,
+        displayName: "9",
+        zodiac: {
+          name: "Sagittarius",
+          displayName: "Sagittarius",
+        },
+        planets: [
+          { name: "Sun", displayName: "Su 11\u00B0" },
+          { name: "Venus", displayName: "\u24D2\uFE61Ve 13\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 10,
+        displayName: "10",
+        zodiac: {
+          name: "Capricorn",
+          displayName: "Capricorn",
+        },
+        planets: [
+          { name: "Ketu", displayName: "Ke\u24E1 14\u00B0" },
+          { name: "Sun", displayName: "Su 11\u00B0" },
+          { name: "Venus", displayName: "\u24D2\uFE61Ve 13\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 11,
+        displayName: "11",
+        zodiac: {
+          name: "Aquarius",
+          displayName: "Aquarius",
+        },
+        planets: [
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+      {
+        name: 12,
+        displayName: "12",
+        zodiac: {
+          name: "Pisces",
+          displayName: "Pisces",
+        },
+        planets: [
+          { name: "Jupiter", displayName: "\u2193Ju 18\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+          { name: "Mercury", displayName: "Me\u24D2\u2191 17\u00B0" },
+        ],
+      },
+    ];
 
     const $northBtn = document.querySelector("#north-btn");
     const $southBtn = document.querySelector("#south-btn");
@@ -185,12 +238,11 @@
       $birthChart.setAttribute("variant", "east");
     });
 
-
     $btn.addEventListener("click", function (e) {
       const currentSize = parseInt($birthChart.getAttribute("size")) || 480;
-      const newSize = currentSize === 480 ? 600 : 480; 
+      const newSize = currentSize === 480 ? 600 : 480;
       $birthChart.setAttribute("size", newSize);
-      $btn.textContent = newSize === 600 ? "Shrink" : "Expand"; 
+      $btn.textContent = newSize === 600 ? "Shrink" : "Expand";
     });
 
     $birthChart.addEventListener("click:chart-region", function (e) {

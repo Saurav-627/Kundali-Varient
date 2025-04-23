@@ -119,11 +119,12 @@ export class KundaliElement extends LitElement {
 
 
   
+
 // render(){
 //   const VIEWBOX_WIDTH = 400;
 //   const VIEWBOX_HEIGHT = 300;
 //   let chart: KundaliVariant;
-//   chart = new SouthKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
+//   chart = new EastKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
 //   return svg`
 //     <svg
 //       xmlns="http://www.w3.org/2000/svg"
@@ -344,7 +345,7 @@ export class KundaliElement extends LitElement {
     /** Planet Styling */
 
     .planet {
-      font-size: 0.75em;
+      font-size: 0.55em;
       font-weight: 400;
       font-family: sans-serif;
       stroke-width: 0.5;
