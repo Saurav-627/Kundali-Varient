@@ -104,7 +104,7 @@ export class EastKundaliVariant extends KundaliVariant {
       },
       {
         name: 12,
-        label: Point.section(this.geometry["v20"], this.geometry["v21"], 6, 1),
+        label: Point.section(this.geometry["v20"], this.geometry["v21"], 9, 1),
         rasi: Point.section(this.geometry["v20"], this.geometry["v30"], 9, 1),
         outlines: [
           this.getShapeCommands(
@@ -134,7 +134,7 @@ export class EastKundaliVariant extends KundaliVariant {
       },
       {
         name: 11,
-        label: Point.section(this.geometry["v31"], this.geometry["v21"], 6, 1),
+        label: Point.section(this.geometry["v31"], this.geometry["v21"], 7, 1),
         rasi: Point.section(this.geometry["v30"], this.geometry["v31"], 29, 1),
         outlines: [
           this.getShapeCommands(
@@ -197,7 +197,7 @@ export class EastKundaliVariant extends KundaliVariant {
       },
       {
         name: 9,
-        label: Point.section(this.geometry["v22"], this.geometry["v33"], 1, 7),
+        label: Point.section(this.geometry["v22"], this.geometry["v32"], 1, 7),
         rasi: Point.section(this.geometry["v32"], this.geometry["v33"], 1, 7),
         outlines: [
           this.getShapeCommands(
@@ -321,7 +321,7 @@ export class EastKundaliVariant extends KundaliVariant {
       },
       {
         name: 5,
-        label: Point.section(this.geometry["v03"], this.geometry["v12"], 7, 1),
+        label: Point.section(this.geometry["v02"], this.geometry["v12"], 7, 1),
         rasi: Point.section(this.geometry["v02"], this.geometry["v03"], 1, 7),
         outlines: [
           this.getShapeCommands(

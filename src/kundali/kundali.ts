@@ -390,6 +390,27 @@ export class KundaliElement extends LitElement {
       dominant-baseline: text-before-edge;
     }
 
+    .east-label-9,
+    .east-label-5{
+      dominant-baseline: hanging;
+      translate: 0 1px;
+    }
+
+    .east-label-2,
+    .east-label-6{
+      translate: -3px 0;
+    }
+    .east-label-12,
+    .east-label-10{
+      translate: 1px 0;
+    }
+    .east-label-4{
+      translate: -1px 0;
+    }
+    .east-label-8{
+      translate: 3px 0;
+    }
+
     /** Watermark Styling */
 
     .watermark-text {
