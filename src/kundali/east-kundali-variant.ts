@@ -351,7 +351,7 @@ export class EastKundaliVariant extends KundaliVariant {
       },
       {
         name: 4,
-        label: Point.section(this.geometry["v01"], this.geometry["v02"], 1, 1),
+        label: Point.section(this.geometry["v11"], this.geometry["v12"], 1, 1),
         rasi: Point.section(this.geometry["v02"], this.geometry["v01"], 1, 1),
         outlines: [
           this.getShapeCommands(
