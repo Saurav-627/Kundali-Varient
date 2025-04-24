@@ -208,10 +208,10 @@ export abstract class KundaliVariant {
         `;
     }
 
-    getPlanetsGrid(planets: Planet[], center: Point, boxWidth: number = 160): TemplateResult {
-        const paddingX = boxWidth / 7.5;
-        const paddingY = boxWidth / 7.5;
-        const boxHeight = boxWidth / 2.2;
+    getPlanetsGrid(planets: Planet[], center: Point, boxWidth: number = 120): TemplateResult {
+        const paddingX = boxWidth / 9;
+        const paddingY = boxWidth / 9;
+        const boxHeight = boxWidth / 2;
 
         const cx = boxWidth / 2;
         const cy = boxHeight / 2;

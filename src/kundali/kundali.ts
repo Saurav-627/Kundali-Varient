@@ -121,10 +121,10 @@ export class KundaliElement extends LitElement {
   
 
 // render(){
-//   const VIEWBOX_WIDTH = 400;
-//   const VIEWBOX_HEIGHT = 300;
+//   const VIEWBOX_WIDTH = 600;
+//   const VIEWBOX_HEIGHT = 500;
 //   let chart: KundaliVariant;
-//   chart = new EastKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
+//   chart = new SouthKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
 //   return svg`
 //     <svg
 //       xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +292,7 @@ export class KundaliElement extends LitElement {
     .rasi-label {
       pointer-events: none;
       user-select: none;
-      white-space: pre-wrap;
+      // white-space: pre-wrap;
       dominant-baseline: text-before-edge;
       text-anchor: middle;
       font: var(--poc-kundali-rasi-label-font, 1em monospace);
