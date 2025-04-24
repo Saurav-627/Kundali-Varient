@@ -381,6 +381,15 @@ export class KundaliElement extends LitElement {
     .south-rasi-label-12{
       dominant-baseline: ideographic;
     }
+
+    .east-label-1{
+      dominant-baseline: ideographic;
+    }
+
+    .east-label-7{
+      dominant-baseline: text-before-edge;
+    }
+
     /** Watermark Styling */
 
     .watermark-text {
