@@ -74,7 +74,7 @@ export abstract class KundaliVariant {
     geometry: IKundaliGeometry = {};
     shapes: IShape[] = [];
 
-    constructor(public width: number, public height: number, public debug: boolean = false) {
+    constructor(public width: number, public height: number, public variant: string, public debug: boolean = false) {
         this.setup();
         this.defineShapes();
     }
@@ -125,13 +125,13 @@ export abstract class KundaliVariant {
 
             const labelText = zodiacNamesLower.indexOf(house.zodiac.name.toLowerCase()) + 1;
             const label = svg`
-            <text class="label label-${shape.name}" x="${shape.label.x}" y="${shape.label.y}">
+            <text class="label ${this.variant}-label-${shape.name} label-${shape.name}" x="${shape.label.x}" y="${shape.label.y}">
                 ${labelText}
             </text>
             `;
 
             const rasiLabel = svg`
-                <text class="rasi-label rasi-label-${shape.name}" x="${shape.rasi.x}" y="${shape.rasi.y}">
+                <text class="rasi-label ${this.variant}-rasi-label-${shape.name} rasi-label-${shape.name}" x="${shape.rasi.x}" y="${shape.rasi.y}">
                     ${house.zodiac.displayName}
                 </text>
             `;

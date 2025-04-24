@@ -8,9 +8,8 @@ import type {
 } from "./kundali-variant";
 
 import { NorthKundaliVariant } from "./north-kundali-variant";
-import { NorthKundaliVariant2 } from "./north-kundali-varient2";
-import { SouthKundaliVariant } from "./south-kundali-varient";
-import { EastKundaliVariant } from "./east-astro-chart";
+import { SouthKundaliVariant } from "./south-kundali-variant";
+import { EastKundaliVariant } from "./east-kundali-variant";
 
 @customElement("poc-kundali")
 export class KundaliElement extends LitElement {
@@ -71,13 +70,7 @@ export class KundaliElement extends LitElement {
         chart = new NorthKundaliVariant(
           VIEWBOX_WIDTH,
           VIEWBOX_HEIGHT,
-          this.debug
-        );
-        break;
-      case "north2":
-        chart = new NorthKundaliVariant2(
-          VIEWBOX_WIDTH,
-          VIEWBOX_HEIGHT,
+          (this.variant = "north"),
           this.debug
         );
         break;
@@ -85,6 +78,7 @@ export class KundaliElement extends LitElement {
         chart = new SouthKundaliVariant(
           VIEWBOX_WIDTH,
           VIEWBOX_HEIGHT,
+          (this.variant = "south"),
           this.debug
         );
         break;
@@ -92,13 +86,15 @@ export class KundaliElement extends LitElement {
         chart = new EastKundaliVariant(
           VIEWBOX_WIDTH,
           VIEWBOX_HEIGHT,
+          (this.variant = "east"),
           this.debug
-        ); 
+        );
         break;
       default:
         chart = new NorthKundaliVariant(
           VIEWBOX_WIDTH,
           VIEWBOX_HEIGHT,
+          (this.variant = "north"),
           this.debug
         );
     }
@@ -115,28 +111,23 @@ export class KundaliElement extends LitElement {
     `;
   }
 
-
-
-
-  
-
-// render(){
-//   const VIEWBOX_WIDTH = 600;
-//   const VIEWBOX_HEIGHT = 500;
-//   let chart: KundaliVariant;
-//   chart = new SouthKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
-//   return svg`
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       width="${this.size}"
-//       id="poc-kundali"
-//       fill="none"
-//       viewBox="0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}"
-//     >
-//       ${this.renderChart(chart)}
-//     </svg>
-//   `;
-// }
+  // render(){
+  //   const VIEWBOX_WIDTH = 400;
+  //   const VIEWBOX_HEIGHT = 300;
+  //   let chart: KundaliVariant;
+  //   chart = new SouthKundaliVariant(VIEWBOX_WIDTH, VIEWBOX_HEIGHT, this.debug);
+  //   return svg`
+  //     <svg
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       width="${this.size}"
+  //       id="poc-kundali"
+  //       fill="none"
+  //       viewBox="0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}"
+  //     >
+  //       ${this.renderChart(chart)}
+  //     </svg>
+  //   `;
+  // }
 
   static styles = css`
     :host {
@@ -241,8 +232,8 @@ export class KundaliElement extends LitElement {
     .label {
       pointer-events: none;
       user-select: none;
-      dominant-baseline: middle;
-      text-anchor: middle;
+      // dominant-baseline: middle;
+      text-anchor: end;
       fill: var(--poc-kundali-label-color, black);
       font: var(--poc-kundali-label-font, 1em monospace);
 
@@ -252,19 +243,20 @@ export class KundaliElement extends LitElement {
       transition: font-size 0.2s;
     }
 
-    .label-1,
+    /* .label-1,
     .label-4,
     .label-7,
     .label-10 {
-      text-anchor: middle;
+      // text-anchor: middle;
     }
 
     .label-2,
     .label-3,
     .label-5,
     .label-6 {
-      text-anchor: end;
+      // text-anchor: end;
     }
+    */
 
     .label-8,
     .label-9,
@@ -280,11 +272,34 @@ export class KundaliElement extends LitElement {
       dominant-baseline: text-after-edge;
     }
 
-    .label-5,
-    .label-6,
-    .label-8,
-    .label-9 {
+    .label-10 {
+      text-anchor: inherit;
+    }
+    .label-7 {
       dominant-baseline: hanging;
+    }
+
+    .north-label-5,
+    .north-label-9 {
+      dominant-baseline: hanging;
+    }
+    .south-label-7{
+      dominant-baseline: ideographic;
+    }
+
+    .south-label-1,
+    .south-label-2,
+    .south-label-3,
+    .south-label-4,
+    .south-label-5,
+    .south-label-6,
+    .south-label-7,
+    .south-label-8,
+    .south-label-9,
+    .south-label-10,
+    .south-label-11,
+    .south-label-12{
+      dominant-baseline: ideographic;
     }
 
     /*# Kundali Rasi Label Styling*/
@@ -293,8 +308,8 @@ export class KundaliElement extends LitElement {
       pointer-events: none;
       user-select: none;
       // white-space: pre-wrap;
-      dominant-baseline: text-before-edge;
-      text-anchor: middle;
+      // dominant-baseline: text-before-edge;
+      text-anchor: end;
       font: var(--poc-kundali-rasi-label-font, 1em monospace);
       fill: var(--poc-kundali-rasi-label-color, black);
     }
@@ -305,7 +320,7 @@ export class KundaliElement extends LitElement {
       dominant-baseline: text-after-edge;
     }
 
-    .rasi-label-11,
+    /* .rasi-label-11,
     .rasi-label-9 {
       text-anchor: end;
       dominant-baseline: text-after-edge;
@@ -318,7 +333,7 @@ export class KundaliElement extends LitElement {
 
     .rasi-label-4 {
       text-anchor: start;
-    }
+    } */
 
     .rasi-label-10 {
       text-anchor: end;
@@ -331,6 +346,41 @@ export class KundaliElement extends LitElement {
       dominant-baseline: text-after-edge;
     }
 
+    .rasi-label-4 {
+      text-anchor: start;
+    }
+
+    .rasi-label-1 {
+      text-anchor: middle;
+    }
+
+    .rasi-label-12,
+    .rasi-label-2,
+    .rasi-label-1 {
+      dominant-baseline: hanging;
+    }
+
+    .south-rasi-label-12,
+    .south-rasi-label-2,
+    .south-rasi-label-1,
+    .south-rasi-label-4 {
+      text-anchor: middle;
+    }
+
+    .south-rasi-label-1,
+    .south-rasi-label-2,
+    .south-rasi-label-3,
+    .south-rasi-label-4,
+    .south-rasi-label-5,
+    .south-rasi-label-6
+    .south-rasi-label-7
+    .south-rasi-label-8,
+    .south-rasi-label-9,
+    .south-rasi-label-10,
+    .south-rasi-label-11,
+    .south-rasi-label-12{
+      dominant-baseline: ideographic;
+    }
     /** Watermark Styling */
 
     .watermark-text {
