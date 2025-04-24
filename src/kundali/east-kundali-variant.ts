@@ -41,36 +41,6 @@ export class EastKundaliVariant extends KundaliVariant {
   defineShapes() {
     this.shapes = [
       {
-        name: 2,
-        label: Point.section(this.geometry["v10"], this.geometry["v11"], 9, 1), 
-        rasi: Point.section(this.geometry["v00"], this.geometry["v10"], 1, 2), 
-        outlines: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v00"],
-            this.geometry["v11"],
-            this.geometry["v10"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v00"],
-            this.geometry["v11"],
-            this.geometry["v10"]
-          ),
-        ],
-        planet: {
-          type: "line",
-          center: Point.section(
-            this.geometry["v10"],
-            this.geometry["v01"],
-            1,
-            1.5
-          ),
-        },
-      },
-      {
         name: 1,
         label: Point.section(this.geometry["v11"], this.geometry["v21"], 1, 1),
         rasi: Point.section(this.geometry["v10"], this.geometry["v20"], 1, 1),
@@ -94,72 +64,212 @@ export class EastKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(
-            this.geometry["v10"],
-            this.geometry["v21"],
-            1,
-            1
-          ),
+          center: Point.section(this.geometry["v10"], this.geometry["v21"], 1, 1),
         },
       },
       {
-        name: 12,
-        label: Point.section(this.geometry["v20"], this.geometry["v21"], 9, 1),
-        rasi: Point.section(this.geometry["v20"], this.geometry["v30"], 9, 1),
+        name: 2,
+        label: Point.section(this.geometry["v10"], this.geometry["v11"], 9, 1),
+        rasi: Point.section(this.geometry["v00"], this.geometry["v10"], 1, 2),
         outlines: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v20"],
-            this.geometry["v30"],
-            this.geometry["v21"]
+            this.geometry["v00"],
+            this.geometry["v11"],
+            this.geometry["v10"]
           ),
         ],
         regions: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v20"],
-            this.geometry["v30"],
-            this.geometry["v21"]
+            this.geometry["v00"],
+            this.geometry["v11"],
+            this.geometry["v10"]
           ),
         ],
         planet: {
           type: "line",
-          center: Point.section(
-            this.geometry["v20"],
-            this.geometry["v21"],
-            1,
-            1.5
-          ),
+          center: Point.section(this.geometry["v10"], this.geometry["v01"], 1, 1.5),
         },
       },
       {
-        name: 11,
-        label: Point.section(this.geometry["v31"], this.geometry["v21"], 7, 1),
-        rasi: Point.section(this.geometry["v30"], this.geometry["v31"], 29, 1),
+        name: 3,
+        label: Point.section(this.geometry["v01"], this.geometry["v11"], 7, 1),
+        rasi: Point.section(this.geometry["v01"], this.geometry["v11"], 0, 12),
         outlines: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v30"],
-            this.geometry["v21"],
-            this.geometry["v31"]
+            this.geometry["v01"],
+            this.geometry["v11"],
+            this.geometry["v00"]
           ),
         ],
         regions: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v30"],
-            this.geometry["v21"],
-            this.geometry["v31"]
+            this.geometry["v01"],
+            this.geometry["v11"],
+            this.geometry["v00"]
           ),
         ],
         planet: {
           type: "line",
-          center: Point.section(
-            this.geometry["v30"],
-            this.geometry["v31"],
-            2,
-            1.5
+          center: Point.section(this.geometry["v00"], this.geometry["v01"], 1, 1.5),
+        },
+      },
+      {
+        name: 4,
+        label: Point.section(this.geometry["v11"], this.geometry["v12"], 1, 1),
+        rasi: Point.section(this.geometry["v02"], this.geometry["v01"], 1, 1),
+        outlines: [
+          this.getShapeCommands(
+            "square",
+            this.geometry["v02"],
+            this.geometry["v12"],
+            this.geometry["v11"],
+            this.geometry["v01"]
           ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "square",
+            this.geometry["v02"],
+            this.geometry["v12"],
+            this.geometry["v11"],
+            this.geometry["v01"]
+          ),
+        ],
+        planet: {
+          type: "grid",
+          center: Point.section(this.geometry["v01"], this.geometry["v12"], 1, 1),
+        },
+      },
+      {
+        name: 5,
+        label: Point.section(this.geometry["v02"], this.geometry["v12"], 7, 1),
+        rasi: Point.section(this.geometry["v02"], this.geometry["v03"], 1, 7),
+        outlines: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v03"],
+            this.geometry["v12"],
+            this.geometry["v02"]
+          ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v03"],
+            this.geometry["v12"],
+            this.geometry["v02"]
+          ),
+        ],
+        planet: {
+          type: "line",
+          center: Point.section(this.geometry["v02"], this.geometry["v03"], 1, 2),
+        },
+      },
+      {
+        name: 6,
+        label: Point.section(this.geometry["v12"], this.geometry["v13"], 1, 4),
+        rasi: Point.section(this.geometry["v03"], this.geometry["v13"], 1, 4),
+        outlines: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v03"],
+            this.geometry["v12"],
+            this.geometry["v13"]
+          ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v03"],
+            this.geometry["v12"],
+            this.geometry["v13"]
+          ),
+        ],
+        planet: {
+          type: "line",
+          center: Point.section(this.geometry["v12"], this.geometry["v13"], 1.2, 1),
+          align: "right",
+        },
+      },
+      {
+        name: 7,
+        label: Point.section(this.geometry["v12"], this.geometry["v22"], 1, 1),
+        rasi: Point.section(this.geometry["v13"], this.geometry["v23"], 1, 1),
+        outlines: [
+          this.getShapeCommands(
+            "square",
+            this.geometry["v23"],
+            this.geometry["v22"],
+            this.geometry["v12"],
+            this.geometry["v13"]
+          ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "square",
+            this.geometry["v23"],
+            this.geometry["v22"],
+            this.geometry["v12"],
+            this.geometry["v13"]
+          ),
+        ],
+        planet: {
+          type: "grid",
+          center: Point.section(this.geometry["v12"], this.geometry["v23"], 1, 1),
+        },
+      },
+      {
+        name: 8,
+        label: Point.section(this.geometry["v22"], this.geometry["v23"], 1, 4),
+        rasi: Point.section(this.geometry["v33"], this.geometry["v23"], 1, 3),
+        outlines: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v33"],
+            this.geometry["v22"],
+            this.geometry["v23"]
+          ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v33"],
+            this.geometry["v22"],
+            this.geometry["v23"]
+          ),
+        ],
+        planet: {
+          type: "line",
+          center: Point.section(this.geometry["v22"], this.geometry["v23"], 1.5, 1),
+        },
+      },
+      {
+        name: 9,
+        label: Point.section(this.geometry["v22"], this.geometry["v32"], 1, 7),
+        rasi: Point.section(this.geometry["v32"], this.geometry["v33"], 1, 7),
+        outlines: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v32"],
+            this.geometry["v22"],
+            this.geometry["v33"]
+          ),
+        ],
+        regions: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v32"],
+            this.geometry["v22"],
+            this.geometry["v33"]
+          ),
+        ],
+        planet: {
+          type: "line",
+          center: Point.section(this.geometry["v32"], this.geometry["v33"], 1, 2),
           align: "right",
         },
       },
@@ -187,228 +297,58 @@ export class EastKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(
+          center: Point.section(this.geometry["v21"], this.geometry["v32"], 1, 1),
+        },
+      },
+      {
+        name: 11,
+        label: Point.section(this.geometry["v31"], this.geometry["v21"], 7, 1),
+        rasi: Point.section(this.geometry["v30"], this.geometry["v31"], 29, 1),
+        outlines: [
+          this.getShapeCommands(
+            "triangle",
+            this.geometry["v30"],
             this.geometry["v21"],
-            this.geometry["v32"],
-            1,
-            1
-          ),
-        },
-      },
-      {
-        name: 9,
-        label: Point.section(this.geometry["v22"], this.geometry["v32"], 1, 7),
-        rasi: Point.section(this.geometry["v32"], this.geometry["v33"], 1, 7),
-        outlines: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v32"],
-            this.geometry["v22"],
-            this.geometry["v33"]
+            this.geometry["v31"]
           ),
         ],
         regions: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v32"],
-            this.geometry["v22"],
-            this.geometry["v33"]
+            this.geometry["v30"],
+            this.geometry["v21"],
+            this.geometry["v31"]
           ),
         ],
         planet: {
           type: "line",
-          center: Point.section(
-            this.geometry["v32"],
-            this.geometry["v33"],
-            1,
-            2
-          ),
-          align:"right"
+          center: Point.section(this.geometry["v30"], this.geometry["v31"], 2, 1.5),
+          align: "right",
         },
       },
       {
-        name: 8,
-        label: Point.section(this.geometry["v22"], this.geometry["v23"], 1, 4),
-        rasi: Point.section(this.geometry["v33"], this.geometry["v23"], 1, 3),
+        name: 12,
+        label: Point.section(this.geometry["v20"], this.geometry["v21"], 9, 1),
+        rasi: Point.section(this.geometry["v20"], this.geometry["v30"], 9, 1),
         outlines: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v33"],
-            this.geometry["v22"],
-            this.geometry["v23"]
+            this.geometry["v20"],
+            this.geometry["v30"],
+            this.geometry["v21"]
           ),
         ],
         regions: [
           this.getShapeCommands(
             "triangle",
-            this.geometry["v33"],
-            this.geometry["v22"],
-            this.geometry["v23"]
+            this.geometry["v20"],
+            this.geometry["v30"],
+            this.geometry["v21"]
           ),
         ],
         planet: {
           type: "line",
-          center: Point.section(
-            this.geometry["v22"],
-            this.geometry["v23"],
-            1.5,
-            1
-          ),
-        },
-      },
-      {
-        name: 7,
-        label: Point.section(this.geometry["v12"], this.geometry["v22"], 1, 1),
-        rasi: Point.section(this.geometry["v13"], this.geometry["v23"], 1, 1),
-        outlines: [
-          this.getShapeCommands(
-            "square",
-            this.geometry["v23"],
-            this.geometry["v22"],
-            this.geometry["v12"],
-            this.geometry["v13"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "square",
-            this.geometry["v23"],
-            this.geometry["v22"],
-            this.geometry["v12"],
-            this.geometry["v13"]
-          ),
-        ],
-        planet: {
-          type: "grid",
-          center: Point.section(
-            this.geometry["v12"],
-            this.geometry["v23"],
-            1,
-            1
-          ),
-        },
-      },
-      {
-        name: 6,
-        label: Point.section(this.geometry["v12"], this.geometry["v13"], 1, 4),
-        rasi: Point.section(this.geometry["v03"], this.geometry["v13"], 1, 4),
-        outlines: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v03"],
-            this.geometry["v12"],
-            this.geometry["v13"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v03"],
-            this.geometry["v12"],
-            this.geometry["v13"]
-          ),
-        ],
-        planet: {
-          type: "line",
-          center: Point.section(
-            this.geometry["v12"],
-            this.geometry["v13"],
-            1.2,
-            1
-          ),
-          align:"right"
-        },
-      },
-      {
-        name: 5,
-        label: Point.section(this.geometry["v02"], this.geometry["v12"], 7, 1),
-        rasi: Point.section(this.geometry["v02"], this.geometry["v03"], 1, 7),
-        outlines: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v03"],
-            this.geometry["v12"],
-            this.geometry["v02"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v03"],
-            this.geometry["v12"],
-            this.geometry["v02"]
-          ),
-        ],
-        planet: {
-          type: "line",
-          center: Point.section(
-            this.geometry["v02"],
-            this.geometry["v03"],
-            1,
-            2
-          ),
-        },
-      },
-      {
-        name: 4,
-        label: Point.section(this.geometry["v11"], this.geometry["v12"], 1, 1),
-        rasi: Point.section(this.geometry["v02"], this.geometry["v01"], 1, 1),
-        outlines: [
-          this.getShapeCommands(
-            "square",
-            this.geometry["v02"],
-            this.geometry["v12"],
-            this.geometry["v11"],
-            this.geometry["v01"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "square",
-            this.geometry["v02"],
-            this.geometry["v12"],
-            this.geometry["v11"],
-            this.geometry["v01"]
-          ),
-        ],
-        planet: {
-          type: "grid",
-          center: Point.section(
-            this.geometry["v01"],
-            this.geometry["v12"],
-            1,
-            1
-          ),
-        },
-      },
-      {
-        name: 3,
-        label: Point.section(this.geometry["v01"], this.geometry["v11"], 7, 1),
-        rasi: Point.section(this.geometry["v01"], this.geometry["v11"], 0, 12),
-        outlines: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v01"],
-            this.geometry["v11"],
-            this.geometry["v00"]
-          ),
-        ],
-        regions: [
-          this.getShapeCommands(
-            "triangle",
-            this.geometry["v01"],
-            this.geometry["v11"],
-            this.geometry["v00"]
-          ),
-        ],
-        planet: {
-          type: "line",
-          center: Point.section(
-            this.geometry["v00"],
-            this.geometry["v01"],
-            1,
-            1.5
-          ),
+          center: Point.section(this.geometry["v20"], this.geometry["v21"], 1, 1.5),
         },
       },
     ];

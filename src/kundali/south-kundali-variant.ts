@@ -22,7 +22,7 @@ export class SouthKundaliVariant extends KundaliVariant {
     //     └──────┴──────┴──────┴──────┘
     //    v04    v14    v24    v34    v44
 
-    const cellWidth = this.width / 4;  // 400
+    const cellWidth = this.width / 4; // 400
     const cellHeight = this.height / 4; // 300
 
     this.geometry["v00"] = new Point(0, 0);
@@ -55,31 +55,6 @@ export class SouthKundaliVariant extends KundaliVariant {
   defineShapes() {
     this.shapes = [
       {
-        name: 12,
-        label: Point.section(this.geometry["v01"], this.geometry["v11"],9, 2), 
-        rasi: Point.section(this.geometry["v01"], this.geometry["v11"], 1, 3.5), 
-        outlines: [
-          this.getSquareCommands(
-            this.geometry["v01"],
-            this.geometry["v11"],
-            this.geometry["v12"],
-            this.geometry["v02"]
-          ),
-        ],
-        regions: [
-          this.getSquareCommands(
-            this.geometry["v00"],
-            this.geometry["v10"],
-            this.geometry["v11"],
-            this.geometry["v01"]
-          ),
-        ],
-        planet: {
-          type: "grid",
-          center: Point.section(this.geometry["v01"], this.geometry["v10"], 1, 1),
-        },
-      },
-      {
         name: 1,
         label: Point.section(this.geometry["v11"], this.geometry["v21"], 13, 1),
         rasi: Point.section(this.geometry["v11"], this.geometry["v21"], 2, 8),
@@ -101,7 +76,12 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v10"], this.geometry["v21"], 1, 1),
+          center: Point.section(
+            this.geometry["v10"],
+            this.geometry["v21"],
+            1,
+            1
+          ),
         },
       },
       {
@@ -126,12 +106,22 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v20"], this.geometry["v31"], 1, 1),
+          center: Point.section(
+            this.geometry["v20"],
+            this.geometry["v31"],
+            1,
+            1
+          ),
         },
       },
       {
         name: 3,
-        label: Point.section(this.geometry["v31"], this.geometry["v41"], 14, 1.2),
+        label: Point.section(
+          this.geometry["v31"],
+          this.geometry["v41"],
+          14,
+          1.2
+        ),
         rasi: Point.section(this.geometry["v31"], this.geometry["v41"], 1, 14),
         outlines: [
           this.getSquareCommands(
@@ -151,12 +141,22 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v30"], this.geometry["v41"], 1, 1),
+          center: Point.section(
+            this.geometry["v30"],
+            this.geometry["v41"],
+            1,
+            1
+          ),
         },
       },
       {
         name: 4,
-        label: Point.section(this.geometry["v32"], this.geometry["v42"], 15, 1.2),
+        label: Point.section(
+          this.geometry["v32"],
+          this.geometry["v42"],
+          15,
+          1.2
+        ),
         rasi: Point.section(this.geometry["v32"], this.geometry["v42"], 1, 4),
         outlines: [
           this.getSquareCommands(
@@ -176,11 +176,22 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v31"], this.geometry["v42"], 1, 1),         },
+          center: Point.section(
+            this.geometry["v31"],
+            this.geometry["v42"],
+            1,
+            1
+          ),
+        },
       },
       {
         name: 5,
-        label: Point.section(this.geometry["v33"], this.geometry["v43"], 15,1.2),
+        label: Point.section(
+          this.geometry["v33"],
+          this.geometry["v43"],
+          15,
+          1.2
+        ),
         rasi: Point.section(this.geometry["v33"], this.geometry["v43"], 1, 24),
         outlines: [
           this.getSquareCommands(
@@ -200,12 +211,22 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v32"], this.geometry["v43"], 1, 1),
+          center: Point.section(
+            this.geometry["v32"],
+            this.geometry["v43"],
+            1,
+            1
+          ),
         },
       },
       {
         name: 6,
-        label: Point.section(this.geometry["v34"], this.geometry["v44"], 14, 1.2),
+        label: Point.section(
+          this.geometry["v34"],
+          this.geometry["v44"],
+          14,
+          1.2
+        ),
         rasi: Point.section(this.geometry["v34"], this.geometry["v44"], 1, 5),
         outlines: [
           this.getSquareCommands(
@@ -225,12 +246,22 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v33"], this.geometry["v44"], 1, 1),
+          center: Point.section(
+            this.geometry["v33"],
+            this.geometry["v44"],
+            1,
+            1
+          ),
         },
       },
       {
         name: 7,
-        label: Point.section(this.geometry["v24"], this.geometry["v34"], 14, 1.2),
+        label: Point.section(
+          this.geometry["v24"],
+          this.geometry["v34"],
+          14,
+          1.2
+        ),
         rasi: Point.section(this.geometry["v24"], this.geometry["v34"], 1, 4),
         outlines: [
           this.getSquareCommands(
@@ -250,7 +281,12 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v23"], this.geometry["v34"], 1, 1),
+          center: Point.section(
+            this.geometry["v23"],
+            this.geometry["v34"],
+            1,
+            1
+          ),
         },
       },
       {
@@ -275,7 +311,12 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v13"], this.geometry["v24"], 1, 1),
+          center: Point.section(
+            this.geometry["v13"],
+            this.geometry["v24"],
+            1,
+            1
+          ),
         },
       },
       {
@@ -300,8 +341,13 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v03"], this.geometry["v14"], 1, 1),
-          align:"right"
+          center: Point.section(
+            this.geometry["v03"],
+            this.geometry["v14"],
+            1,
+            1
+          ),
+          align: "right",
         },
       },
       {
@@ -313,7 +359,7 @@ export class SouthKundaliVariant extends KundaliVariant {
             this.geometry["v02"],
             this.geometry["v03"],
             this.geometry["v13"],
-            this.geometry["v12"],
+            this.geometry["v12"]
           ),
         ],
         regions: [
@@ -321,12 +367,17 @@ export class SouthKundaliVariant extends KundaliVariant {
             this.geometry["v02"],
             this.geometry["v03"],
             this.geometry["v13"],
-            this.geometry["v12"],
+            this.geometry["v12"]
           ),
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v02"], this.geometry["v13"], 1, 1), 
+          center: Point.section(
+            this.geometry["v02"],
+            this.geometry["v13"],
+            1,
+            1
+          ),
         },
       },
       {
@@ -351,13 +402,53 @@ export class SouthKundaliVariant extends KundaliVariant {
         ],
         planet: {
           type: "grid",
-          center: Point.section(this.geometry["v01"], this.geometry["v12"], 1, 1), 
+          center: Point.section(
+            this.geometry["v01"],
+            this.geometry["v12"],
+            1,
+            1
+          ),
+        },
+      },
+      {
+        name: 12,
+        label: Point.section(this.geometry["v01"], this.geometry["v11"], 9, 2),
+        rasi: Point.section(this.geometry["v01"], this.geometry["v11"], 1, 3.5),
+        outlines: [
+          this.getSquareCommands(
+            this.geometry["v01"],
+            this.geometry["v11"],
+            this.geometry["v12"],
+            this.geometry["v02"]
+          ),
+        ],
+        regions: [
+          this.getSquareCommands(
+            this.geometry["v00"],
+            this.geometry["v10"],
+            this.geometry["v11"],
+            this.geometry["v01"]
+          ),
+        ],
+        planet: {
+          type: "grid",
+          center: Point.section(
+            this.geometry["v01"],
+            this.geometry["v10"],
+            1,
+            1
+          ),
         },
       },
     ];
   }
 
-  getSquareCommands(topLeft: Point, topRight: Point, bottomRight: Point, bottomLeft: Point, close?: Point): CmdTuple[] {
+  getSquareCommands(
+    topLeft: Point,
+    topRight: Point,
+    bottomRight: Point,
+    bottomLeft: Point
+  ): CmdTuple[] {
     return [
       ["M", topLeft],
       ["L", topRight, bottomRight, bottomLeft, topLeft],
@@ -371,7 +462,11 @@ export class SouthKundaliVariant extends KundaliVariant {
 
     return [
       ["M", new Point(center.x - offsetX, center.y)],
-      ["Q", new Point(center.x, center.y + offsetY), new Point(center.x + offsetX, center.y)],
+      [
+        "Q",
+        new Point(center.x, center.y + offsetY),
+        new Point(center.x + offsetX, center.y),
+      ],
     ];
   }
 }
